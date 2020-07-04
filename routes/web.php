@@ -20,3 +20,9 @@ $router->get('/', ['as' => 'index', function () {
 $router->get('/apropos', ['as'=> 'apropos', function() {
     return view('about');
 }]);
+
+$router->get('/contact', ['as'=> 'contactForm', function() {
+    return view('contactForm');
+}]);
+
+$router->post('/contact', ['as'=> 'contactSend', 'uses' => 'ContactController@sendMail']);
